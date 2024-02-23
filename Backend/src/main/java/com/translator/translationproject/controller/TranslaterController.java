@@ -16,7 +16,7 @@ public class TranslaterController {
 
     @PostMapping("/translate")
     public String translate(@RequestBody String prompt,
-                            @RequestParam(name = "from") String from,
+                            @RequestParam(name = "from", defaultValue = "") String from,
                             @RequestParam(name = "to") String to) throws IOException {
 
         return translator.translate(prompt, from, to);

@@ -32,7 +32,6 @@ public class TranslatorImpl implements ITranslator {
                 .post(body)
                 .addHeader("Ocp-Apim-Subscription-Key", key)
                 .addHeader("Ocp-Apim-Subscription-Region", region)
-                .addHeader("Content-type", "application/json")
                 .build();
         try (Response response = client.newCall(request).execute()) {
             String responseBody = response.body().string();
