@@ -49,12 +49,12 @@ function Body() {
     <div>
       <div className="d-grid gap-5 h-screen">
         {/* Form on the left */}
-        <div className="d-flex align-items-center justify-content-end pr-5">
+        <div className="d-flex align-items-center justify-content-end pr-5" style={{backgroundColor: '#f8f9fa'}}>
             <div className="w-50">
             <Form>
               <Form.Group>
-                <Form.Label>Translate from</Form.Label>
-                <Form.Control as="select" onChange={handleTranslateFrom}>
+                <Form.Label style={{color: '#6c757d'}}>Translate from</Form.Label>
+                <Form.Control as="select" onChange={handleTranslateFrom} style={{backgroundColor: '#e9ecef'}}>
                   <option value="">Detect language</option>
                   <option value="en">English</option>
                   <option value="fr">French</option>
@@ -71,12 +71,12 @@ function Body() {
         </div>
 
         {/* Form on the right */}
-        <div className="d-flex align-items-center justify-content-start pl-5">
+        <div className="d-flex align-items-center justify-content-start pl-5" style={{backgroundColor: '#f8f9fa'}}>
             <div className="w-50">
               <Form>
                 <Form.Group>
-                  <Form.Label>Translate to</Form.Label>
-                  <Form.Control as="select" onChange={handleTranslateTo}>
+                  <Form.Label style={{color: '#6c757d'}}>Translate to</Form.Label>
+                  <Form.Control as="select" onChange={handleTranslateTo} style={{backgroundColor: '#e9ecef'}}>
                     <option>Choose a language</option>
                     <option value="en">English</option>
                     <option value="fr">French</option>
@@ -94,7 +94,7 @@ function Body() {
       </div>
 
       <div className="d-flex align-items-center justify-content-center mt-auto">
-        <Button variant="primary" type="submit" className="mt-2" onClick={() => handleTranslation()}>
+        <Button variant="primary" type="submit" className="mt-2" onClick={() => handleTranslation()} style={{backgroundColor: '#007bff'}}>
           Translate
         </Button>
       </div>
