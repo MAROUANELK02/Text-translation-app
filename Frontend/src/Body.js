@@ -108,7 +108,7 @@ function Body() {
       </div>
 
       <div className="d-flex align-items-center justify-content-center mt-auto">
-        <Button variant="primary" type="submit" className="mt-2" onClick={() => handleTranslation()} style={{backgroundColor: '#007bff'}}>
+        <Button variant="primary" type="submit" className="mt-3 mb-4" onClick={() => handleTranslation()} style={{backgroundColor: '#007bff'}}>
           Translate
         </Button>
       </div>
