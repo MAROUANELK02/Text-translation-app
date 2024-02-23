@@ -45,56 +45,61 @@ function Body() {
     });
   };
 
-return (
-  <div className="flex h-screen">
-    {/* Form on the left */}
-    <div className="flex items-center justify-center w-1/2">
-        <div className="mr-4">
-        <Form>
-          <Form.Group>
-            <Form.Label>Translate from</Form.Label>
-            <Form.Control as="select" onChange={handleTranslateFrom}>
-              <option value="">Detect language</option>
-              <option value="en">English</option>
-              <option value="fr">French</option>
-              <option value="ar">Arabic</option>
-              <option value="es">Spanish</option>
-            </Form.Control>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Text to translate</Form.Label>
-            <Form.Control as="textarea" rows={3} onChange={handleTextToTranslate}/>
-          </Form.Group>
-        </Form>
-        <Button variant="primary" type="submit" className='mt-2' onClick={() => handleTranslation()}>
+  return (
+    <div>
+      <div className="d-grid gap-5 h-screen">
+        {/* Form on the left */}
+        <div className="d-flex align-items-center justify-content-end pr-5">
+            <div className="w-50">
+            <Form>
+              <Form.Group>
+                <Form.Label>Translate from</Form.Label>
+                <Form.Control as="select" onChange={handleTranslateFrom}>
+                  <option value="">Detect language</option>
+                  <option value="en">English</option>
+                  <option value="fr">French</option>
+                  <option value="ar">Arabic</option>
+                  <option value="es">Spanish</option>
+                </Form.Control>
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Text to translate</Form.Label>
+                <Form.Control as="textarea" rows={3} onChange={handleTextToTranslate}/>
+              </Form.Group>
+            </Form>
+            </div>
+        </div>
+
+        {/* Form on the right */}
+        <div className="d-flex align-items-center justify-content-start pl-5">
+            <div className="w-50">
+              <Form>
+                <Form.Group>
+                  <Form.Label>Translate to</Form.Label>
+                  <Form.Control as="select" onChange={handleTranslateTo}>
+                    <option>Choose a language</option>
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="ar">Arabic</option>
+                    <option value="es">Spanish</option>
+                  </Form.Control>
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label>Text translated</Form.Label>
+                  <Form.Control as="textarea" rows={3} readOnly value={translation} />
+                </Form.Group>
+              </Form>
+            </div>
+        </div>
+      </div>
+
+      <div className="d-flex align-items-center justify-content-center mt-auto">
+        <Button variant="primary" type="submit" className="mt-2" onClick={() => handleTranslation()}>
           Translate
         </Button>
-        </div>
+      </div>
     </div>
-
-    {/* Form on the right */}
-    <div className="flex items-center justify-center w-1/2">
-        <div className="ml-4">
-          <Form>
-            <Form.Group>
-              <Form.Label>Translate to</Form.Label>
-              <Form.Control as="select" onChange={handleTranslateTo}>
-                <option>Choose a language</option>
-                <option value="en">English</option>
-                <option value="fr">French</option>
-                <option value="ar">Arabic</option>
-                <option value="es">Spanish</option>
-              </Form.Control>
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Text translated</Form.Label>
-              <Form.Control as="textarea" rows={3} readOnly value={translation} />
-            </Form.Group>
-          </Form>
-        </div>
-    </div>
-  </div>
-);
+  );
 }
 
 export default Body;
